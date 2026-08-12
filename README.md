@@ -56,14 +56,14 @@ O site contará com as seguintes funcionalidades:
 * [X] Apresentação da psicóloga;
 * [X] Seção "Sobre mim";
 * [X] Formação acadêmica;
-* [ ] Abordagens terapêuticas;
-* [ ] Áreas de atuação;
+* [X] Abordagens terapêuticas;
+* [X] Áreas de atuação;
 * [ ] Informações sobre atendimento;
 * [ ] Seção de perguntas frequentes;
-* [ ] Formas de contato;
-* [ ] Integração com WhatsApp;
-* [ ] Links para redes sociais;
-* [ ] Responsividade para dispositivos móveis;
+* [X] Formas de contato;
+* [X] Integração com WhatsApp;
+* [X] Links para redes sociais;
+* [X] Responsividade para dispositivos móveis;
 * [ ] SEO básico;
 * [ ] Acessibilidade;
 * [ ] Política de privacidade.
