@@ -52,10 +52,10 @@ O site tem como principais objetivos:
 
 O site contará com as seguintes funcionalidades:
 
-* [ ] Página inicial;
-* [ ] Apresentação da psicóloga;
-* [ ] Seção "Sobre mim";
-* [ ] Formação acadêmica;
+* [X] Página inicial;
+* [X] Apresentação da psicóloga;
+* [X] Seção "Sobre mim";
+* [X] Formação acadêmica;
 * [ ] Abordagens terapêuticas;
 * [ ] Áreas de atuação;
 * [ ] Informações sobre atendimento;
