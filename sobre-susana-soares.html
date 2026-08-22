@@ -8,7 +8,41 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styleSobreSusana.css">
+<link id="theme-stylesheet" rel="stylesheet" href="css/styleSobreSusana.css">
+<style>
+  /* Estilos do botão de tema — ficam fora da folha trocável para nunca sumirem */
+  #theme-toggle{
+    position:fixed;
+    top:18px;
+    right:24px;
+    z-index:999;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 16px;
+    border-radius:999px;
+    border:1px solid rgba(0,0,0,.15);
+    background:rgba(255,255,255,.9);
+    color:#2c2e24;
+    font-family:'Inter',sans-serif;
+    font-size:.85rem;
+    font-weight:500;
+    cursor:pointer;
+    backdrop-filter:blur(6px);
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  #theme-toggle:hover{ background:#fff; }
+  #theme-toggle .icon{ font-size:1rem; line-height:1; }
+ 
+  /* Quando o CSS escuro estiver ativo, o próprio darkSobreSusana.css pode
+     sobrescrever #theme-toggle (mesmo id) para combinar com o tema escuro.
+     Este bloco abaixo é só um fallback caso o dark CSS não faça isso. */
+  html[data-theme="dark"] #theme-toggle{
+    background:rgba(20,22,16,.85);
+    color:#f1efe4;
+    border-color:rgba(255,255,255,.18);
+  }
+</style>
 
 </head>
 <body>
@@ -162,8 +196,8 @@
 
 <script>
   (function () {
-    var LIGHT_HREF = 'CSS/styleSobreSusana.css';
-    var DARK_HREF  = 'CSS/darkStyleSobreSusana.css';
+    var LIGHT_HREF = 'css/styleSobreSusana.css';
+    var DARK_HREF  = 'css/darkStyleSobreSusana.css';
 
     var link   = document.getElementById('theme-stylesheet');
     var button = document.getElementById('theme-toggle');
@@ -171,22 +205,31 @@
     var icon   = button.querySelector('.icon');
 
     function setTheme(isDark) {
-      link.setAttribute('href', isDark ? DARK_HREF : LIGHT_HREF);
-      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-      button.setAttribute('aria-pressed', String(isDark));
-      button.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
-      label.textContent = isDark ? 'Modo claro' : 'Modo escuro';
-      icon.textContent = isDark ? '☀️' : '🌙';
+        link.setAttribute('href', isDark ? DARK_HREF : LIGHT_HREF);
+        document.documentElement.setAttribute(
+            'data-theme',
+            isDark ? 'dark' : 'light'
+        );
+
+        button.setAttribute('aria-pressed', String(isDark));
+        button.setAttribute(
+            'aria-label',
+            isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro'
+        );
+
+        label.textContent = isDark ? 'Modo claro' : 'Modo escuro';
+        icon.textContent = isDark ? '☀️' : '🌙';
     }
 
     button.addEventListener('click', function () {
-      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      setTheme(!isDark);
+        var isDark =
+            document.documentElement.getAttribute('data-theme') === 'dark';
+
+        setTheme(!isDark);
     });
 
-    // Começa sempre no tema claro ao carregar a página.
     setTheme(false);
-  })();
+})();
 </script>
 
 </body>
