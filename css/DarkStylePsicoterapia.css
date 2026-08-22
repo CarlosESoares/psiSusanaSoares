@@ -1,0 +1,195 @@
+/* ============================================
+   DarkStylePsicoterapia.css — modo escuro
+   ============================================ */
+
+:root{
+  --cream:      #16180f;
+  --paper:      #1e2116;
+  --ink:        #f1efe4;
+  --ink-soft:   #b7bda3;
+  --sage:       #9db176;
+  --sage-deep:  #a9c17c;
+  --sage-dark:  #262b1b;
+  --ochre:      #d1a35c;
+  --line:       rgba(255,255,255,.10);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,.display{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:500;
+  color:#faf8ef;
+  line-height:1.2;
+  margin:0;
+}
+a{color:inherit;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+/* ---------- Ações do topo ---------- */
+.top-actions{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 32px;
+  background:rgba(22,24,15,.9);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.btn-home{
+  display:inline-flex; align-items:center; gap:8px;
+  text-decoration:none; color:#f1efe4;
+  font-size:.92rem; font-weight:600;
+  padding:9px 16px; border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  transition:background .2s ease, border-color .2s ease;
+}
+.btn-home:hover{background:var(--sage-deep); color:#16180f; border-color:var(--sage-deep);}
+.btn-home .ico{font-size:1rem; line-height:1;}
+
+#theme-toggle{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:9px 16px; border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--paper); color:#f1efe4;
+  font-family:'Inter',sans-serif; font-size:.85rem; font-weight:500;
+  cursor:pointer; transition:background .2s ease, color .2s ease;
+}
+#theme-toggle:hover{background:#2a2f20;}
+#theme-toggle .icon{font-size:1rem; line-height:1;}
+
+@media (max-width:600px){
+  .top-actions{padding:14px 18px;}
+  .btn-home span:not(.ico){display:none;}
+}
+
+.top-actions-left{display:flex; align-items:center; gap:10px;}
+
+/* ---------- Artigo de leitura longa ---------- */
+.article{
+  max-width:720px; margin:0 auto; padding:8px 32px 100px;
+}
+.article-box{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:44px 48px;
+  box-shadow:0 22px 48px -28px rgba(0,0,0,.6);
+}
+.article h2{
+  font-size:1.4rem; margin:44px 0 16px; color:#faf8ef;
+}
+.article h2:first-of-type{margin-top:0;}
+.article p{
+  color:var(--ink-soft); margin:0 0 20px; font-size:1.02rem;
+  text-align:justify;
+  text-justify:inter-word;
+  hyphens:auto;
+}
+.article p strong{color:var(--ink);}
+@media (max-width:640px){
+  .article-box{padding:30px 26px;}
+  .article p{text-align:left;}
+}
+
+/* ---------- Cabeçalho da página ---------- */
+.page-header{padding:72px 0 48px; text-align:center;}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:.78rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--sage-deep); font-weight:600; margin-bottom:16px;
+  justify-content:center;
+}
+.eyebrow::before,.eyebrow::after{content:"";width:22px;height:1px;background:var(--ochre);}
+.page-header h1{font-size:clamp(2.1rem,4vw,3rem); max-width:22ch; margin:0 auto; color:#faf8ef;}
+.quote{
+  font-family:'Fraunces',serif; font-style:italic; font-weight:500;
+  font-size:clamp(1.15rem,2vw,1.4rem); color:var(--sage-deep);
+  max-width:38ch; margin:26px auto 0; line-height:1.5;
+}
+.quote cite{display:block; font-style:normal; font-size:.8rem; color:var(--ink-soft); margin-top:10px;}
+.hint{
+  margin:22px auto 0; font-size:.86rem; color:var(--ink-soft);
+  font-style:italic;
+}
+
+/* ---------- Cards expansíveis ---------- */
+.cards-grid{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:24px;
+  padding:20px 32px 90px;
+  align-items:start;
+}
+@media (max-width:820px){ .cards-grid{grid-template-columns:1fr;} }
+
+.expand-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:30px 30px 26px;
+  cursor:pointer;
+  outline:none;
+  transition:box-shadow .3s ease, border-color .3s ease, transform .3s ease;
+}
+.expand-card:hover,
+.expand-card:focus-visible{
+  box-shadow:0 22px 40px -20px rgba(0,0,0,.6);
+  border-color:var(--sage);
+  transform:translateY(-2px);
+}
+
+.card-face h2{font-size:1.35rem; margin:8px 0 10px; color:#faf8ef;}
+.card-face .eyebrow{margin-bottom:10px;}
+.teaser{color:var(--ink-soft); font-size:.96rem; margin:0;}
+
+.card-hidden{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:max-height .45s ease, opacity .35s ease .05s, margin-top .45s ease;
+  margin-top:0;
+}
+.expand-card:hover .card-hidden,
+.expand-card:focus-visible .card-hidden,
+.expand-card.is-open .card-hidden{
+  max-height:900px;
+  opacity:1;
+  margin-top:18px;
+}
+.card-hidden p{color:var(--ink-soft); margin:0 0 14px; font-size:.96rem;}
+.card-hidden p:last-of-type{margin-bottom:16px;}
+.card-hidden a{
+  color:var(--sage-deep);
+  text-decoration:underline;
+  text-decoration-color:var(--line);
+}
+.card-hidden a:hover{text-decoration-color:var(--sage-deep);}
+
+.read-more{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:.92rem; font-weight:600; color:var(--sage-deep) !important;
+  text-decoration:none !important;
+  border-bottom:1px solid var(--ochre); padding-bottom:2px;
+}
+.read-more:hover{color:var(--ochre) !important;}
+
+/* ---------- Rodapé ---------- */
+footer.site{
+  background:var(--sage-dark); color:#f1efe4;
+  padding:26px 0;
+}
+.footer-inner{
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  font-size:.88rem;
+}
+.footer-inner a{color:#f1efe4; text-decoration:underline; text-decoration-color:rgba(255,255,255,.35);}
+.footer-inner a:hover{text-decoration-color:#f1efe4;}
+.footer-links{display:flex; gap:22px; flex-wrap:wrap;}

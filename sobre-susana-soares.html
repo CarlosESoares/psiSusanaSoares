@@ -9,8 +9,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styleSobreSusana.css">
+
 </head>
 <body>
+
+<button id="theme-toggle" type="button" aria-pressed="false" aria-label="Alternar para modo escuro">
+  <span class="icon" aria-hidden="true">🌙</span>
+  <span class="label">Modo escuro</span>
+</button>
 
 <header class="site">
   <nav class="nav">
@@ -85,7 +91,7 @@
         <div class="card">
           <h3>Psicoterapia</h3>
           <p>Sessões individuais de 55 minutos para adultos, presenciais ou online, com periodicidade semanal ou quinzenal. Um trabalho conjunto que caminha de uma questão específica até um processo mais amplo de autoconhecimento.</p>
-          <a class="card-link" href="https://psisusanasoares.com/psicoterapia/">Saiba mais →</a>
+          <a class="card-link" href="Psicoterapia.html">Saiba mais →</a>
         </div>
         <div class="card">
           <h3>Consultoria</h3>
@@ -153,6 +159,35 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var LIGHT_HREF = 'CSS/styleSobreSusana.css';
+    var DARK_HREF  = 'CSS/darkStyleSobreSusana.css';
+
+    var link   = document.getElementById('theme-stylesheet');
+    var button = document.getElementById('theme-toggle');
+    var label  = button.querySelector('.label');
+    var icon   = button.querySelector('.icon');
+
+    function setTheme(isDark) {
+      link.setAttribute('href', isDark ? DARK_HREF : LIGHT_HREF);
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      button.setAttribute('aria-pressed', String(isDark));
+      button.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
+      label.textContent = isDark ? 'Modo claro' : 'Modo escuro';
+      icon.textContent = isDark ? '☀️' : '🌙';
+    }
+
+    button.addEventListener('click', function () {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      setTheme(!isDark);
+    });
+
+    // Começa sempre no tema claro ao carregar a página.
+    setTheme(false);
+  })();
+</script>
 
 </body>
 </html>
