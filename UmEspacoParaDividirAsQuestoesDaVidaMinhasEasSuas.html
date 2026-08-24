@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link id="theme-stylesheet" rel="stylesheet" href="css/StylePsicoterapia.css">
+<link rel="stylesheet" href="css/StyleEspacoVida.css">
 </head>
 <body>
 
@@ -44,6 +44,7 @@
   <section class="link-index">
 
     <div class="link-card">
+      <span class="card-icon" aria-hidden="true">P</span>
       <h2>Psicologia</h2>
       <ul>
         <li><a href="https://psisusanasoares.com/o-que-esperar-da-psicoterapia/" target="_blank" rel="noreferrer noopener">O que esperar da Psicoterapia?</a></li>
@@ -58,6 +59,7 @@
     </div>
 
     <div class="link-card is-wide">
+      <span class="card-icon" aria-hidden="true">S</span>
       <h2>Sobre Saúde Mental</h2>
       <ul>
         <li><a href="https://psisusanasoares.com/por-que-seguramos-tanto-o-celular/" target="_blank" rel="noreferrer noopener">Por que seguramos tanto o celular?</a></li>
@@ -80,6 +82,7 @@
     </div>
 
     <div class="link-card">
+      <span class="card-icon" aria-hidden="true">A</span>
       <h2>Aleatoriedades</h2>
       <ul>
         <li><a href="https://psisusanasoares.com/o-meu-comeco-com-as-midias-sociais/" target="_blank" rel="noreferrer noopener">O Meu Começo com as Mídias Sociais!</a></li>
@@ -108,16 +111,11 @@
 
 <script>
   (function () {
-    var LIGHT_HREF = 'css/StylePsicoterapia.css';
-    var DARK_HREF  = 'css/DarkStylePsicoterapia.css';
-
-    var link   = document.getElementById('theme-stylesheet');
     var button = document.getElementById('theme-toggle');
     var label  = button.querySelector('.label');
     var icon   = button.querySelector('.icon');
 
     function setTheme(isDark) {
-      link.setAttribute('href', isDark ? DARK_HREF : LIGHT_HREF);
       document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
       button.setAttribute('aria-pressed', String(isDark));
       button.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
