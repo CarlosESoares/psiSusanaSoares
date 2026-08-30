@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicoterapia online funciona? — Susana Soares</title>
+<meta name="description" content="Psicoterapia online é tão eficiente quanto presencial? Um panorama sobre regulamentação, sigilo e as diferenças entre as duas modalidades." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link id="theme-stylesheet" rel="stylesheet" href="css/StylePsicoterapia.css">
+</head>
+<body>
+
+<div class="top-actions">
+  <div class="top-actions-left">
+    <a class="btn-home" href="sobre-susana-soares.html" aria-label="Voltar para a página inicial">
+      <span class="ico" aria-hidden="true">←</span> <span>Página inicial</span>
+    </a>
+    <a class="btn-home" href="psicoterapia.html" aria-label="Voltar para a página de Psicoterapia">
+      <span class="ico" aria-hidden="true">↩</span> <span>Psicoterapia</span>
+    </a>
+  </div>
+  <button id="theme-toggle" type="button" aria-pressed="false" aria-label="Alternar para modo escuro">
+    <span class="icon" aria-hidden="true">🌙</span>
+    <span class="label">Modo escuro</span>
+  </button>
+</div>
+
+<main>
+
+  <header class="page-header wrap">
+    <span class="eyebrow">Psicoterapia</span>
+    <h1>O que é a Terapia de Aceitação e Compromisso?</h1>
+  </header>
+
+  <article class="article">
+    <div class="article-box">
+<p>Tente imaginar a Psicologia como uma árvore com imensos e longos galhos. Cada ramificação é uma tese sobre o comportamento humano que passou pelos crivos da comunidade científica.</p>
+
+<h2>Das raízes às primeiras ramificações</h2>
+
+<p>Do galho do <strong>Behaviorismo</strong> surgem as Terapias Comportamentais (TC). Mais adiante, as terapias cognitivas se somam com galhos advindos das abordagens psicodinâmicas e humanistas. Desse encontro entre as Terapias Comportamentais e as terapias cognitivas, surge a <strong>Terapia Cognitivo-Comportamental (TCC)</strong>.</p>
+
+<p>O Behaviorismo é a ciência psicológica que investiga o condicionamento do comportamento humano de acordo com os estímulos do ambiente. A TC se concentra no comportamento manifesto; por isso, as sessões do tratamento são estruturadas com técnicas que visam reduzir respostas negativas e melhorar o repertório comportamental com ações mais adaptativas.</p>
+
+<p>Já a Terapia Cognitiva objetiva identificar padrões de pensamento, crenças e hábitos que estão na origem dos problemas, indicando, a partir disso, técnicas para alterar essas percepções de forma positiva.</p>
+
+<h2>As ramificações da TCC: As terapias de terceira onda</h2>
+
+<p>Dos galhos da TCC vieram as terapias de terceira onda, como a Terapia Dialética Comportamental e outras baseadas em <em>mindfulness</em>. Desses ramos, surge a <strong>Terapia de Aceitação e Compromisso (ACT)</strong>.</p>
+
+<p>A ACT carrega como conceito principal a <strong>flexibilidade psicológica</strong>, conceituada como a capacidade de entrar em contato com o momento presente e as experiências internas e, de acordo com o contexto, persistir ou alterar a busca de objetivos e valores pessoais.</p>
+
+<p>O objetivo principal da ACT é aumentar essa flexibilidade psicológica. Para atingi-lo, faz uso de seis processos psicológicos de mudança:</p>
+
+<ul>
+  <li><strong>Aceitação:</strong> Abertura para vivenciar experiências internas sem tentar controlá-las ou esquivá-las.</li>
+  <li><strong>Desfusão cognitiva:</strong> Aprendizado para se distanciar e não tomar pensamentos como verdades absolutas.</li>
+  <li><strong>Estar presente:</strong> Conexão consciente com o momento atual.</li>
+  <li><strong>Eu como contexto:</strong> Observação de si mesmo além dos conteúdos mentais e papéis.</li>
+  <li><strong>Valores:</strong> Clareza sobre o que é verdadeiramente importante para a própria vida.</li>
+  <li><strong>Ações comprometidas:</strong> Passos concretos alinhados aos valores definidos.</li>
+</ul>
+
+<h2>O crescimento contínuo da ciência</h2>
+
+<p>A ciência está sempre em intenso curso de desenvolvimento. A cada novo galho, folha ou semente, um cientista estuda, captura e desenvolve conhecimento. A psicologia segue esse mesmo fluxo, configurando-se como uma árvore gigante com dezenas de possibilidades terapêuticas.</p>
+
+<p class="image-caption"><em>Texto baseado no livro "Terapia de Aceitação e Compromisso: O Processo e a Prática da Mudança Consciente" (Hayes, S., Strosahl, K., Wilson, K.).</em></p></div>
+  </article>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footer-inner">
+    <span>© Susana Soares — Psicóloga</span>
+    <div class="footer-links">
+      <a href="https://api.whatsapp.com/send?phone=5511950502724" target="_blank" rel="noreferrer noopener">WhatsApp: (11) 95050-2724</a>
+      <a href="mailto:psi.susanasoares@gmail.com">psi.susanasoares@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var LIGHT_HREF = 'css/StylePsicoterapia.css';
+    var DARK_HREF  = 'css/DarkStylePsicoterapia.css';
+
+    var link   = document.getElementById('theme-stylesheet');
+    var button = document.getElementById('theme-toggle');
+    var label  = button.querySelector('.label');
+    var icon   = button.querySelector('.icon');
+
+    function setTheme(isDark) {
+      link.setAttribute('href', isDark ? DARK_HREF : LIGHT_HREF);
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      button.setAttribute('aria-pressed', String(isDark));
+      button.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
+      label.textContent = isDark ? 'Modo claro' : 'Modo escuro';
+      icon.textContent = isDark ? '☀️' : '🌙';
+    }
+
+    button.addEventListener('click', function () {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      setTheme(!isDark);
+    });
+
+    setTheme(false);
+  })();
+</script>
+
+</body>
+</html>

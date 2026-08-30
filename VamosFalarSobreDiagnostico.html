@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicoterapia online funciona? — Susana Soares</title>
+<meta name="description" content="Psicoterapia online é tão eficiente quanto presencial? Um panorama sobre regulamentação, sigilo e as diferenças entre as duas modalidades." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link id="theme-stylesheet" rel="stylesheet" href="css/StylePsicoterapia.css">
+</head>
+<body>
+
+<div class="top-actions">
+  <div class="top-actions-left">
+    <a class="btn-home" href="sobre-susana-soares.html" aria-label="Voltar para a página inicial">
+      <span class="ico" aria-hidden="true">←</span> <span>Página inicial</span>
+    </a>
+    <a class="btn-home" href="psicoterapia.html" aria-label="Voltar para a página de Psicoterapia">
+      <span class="ico" aria-hidden="true">↩</span> <span>Psicoterapia</span>
+    </a>
+  </div>
+  <button id="theme-toggle" type="button" aria-pressed="false" aria-label="Alternar para modo escuro">
+    <span class="icon" aria-hidden="true">🌙</span>
+    <span class="label">Modo escuro</span>
+  </button>
+</div>
+
+<main>
+
+  <header class="page-header wrap">
+    <span class="eyebrow">Psicoterapia</span>
+    <h1>Vamos fala sobre Diagnóstico!  </h1>
+  </header>
+
+  <article class="article">
+    <div class="article-box">
+<p>Você já deve ter ouvido falar em diagnósticos e seus códigos.</p>
+
+<p>O mais famoso é o <strong>CID</strong> (Classificação Internacional de Doenças). Estes códigos foram desenvolvidos no esforço de pesquisadores ao redor do mundo para terem uma "mesma língua" ao falar de uma doença.</p>
+
+<p>Na psiquiatria desenvolveram o <strong>DSM</strong> (Manual Diagnóstico e Estatístico de Transtornos Mentais), que segue uma linha semelhante ao CID, porém com formas diferentes de compreender o curso de alguns transtornos mentais.</p>
+
+<p>Já a psicologia utiliza diversos recursos para além dos manuais diagnósticos, contando com várias escolas de conhecimento que fornecem ferramentas para entender o sofrimento psíquico, tais como técnicas, métodos, testes, entre outros.</p>
+
+<p>Dentro de um sistema de saúde, os profissionais são orientados a usar o CID para dialogar sobre diagnósticos e, assim, unificar a linguagem.</p>
+
+<h2>A função do diagnóstico na ciência e para o paciente</h2>
+
+<p>O diagnóstico em saúde mental é importante para entendermos o curso de um sofrimento psíquico, sua duração e prognóstico. Ele também ajuda a ciência a desenvolver novos tratamentos e protocolos para cada estrutura de sofrimento.</p>
+
+<p>Para fechar um diagnóstico é importante "cumprir critérios": uma soma de sintomas que se comportam de determinada forma dentro de uma escala de tempo.</p>
+
+<p><strong>Nem todo sofrimento psíquico fecha um diagnóstico!</strong> E aqui entra a função da avaliação para o paciente: ter um diagnóstico pode ajudar a pessoa a aceitar sua condição e buscar os melhores tratamentos. No entanto, dependendo de como é dado e assimilado, ele pode ser tomado como uma sentença.</p>
+
+<h2>Nós não somos diagnósticos</h2>
+
+<p>Nós não somos diagnósticos! Nascemos com corpos que possuem suas limitações e potências. Nos cabe nessa jornada conhecer essas limitações para potencializar aquilo que sabemos e queremos fazer!</p>
+
+<p>O preconceito em relação aos transtornos mentais, como qualquer preconceito, mata, aprisiona e nega tratamento a quem mais amamos. Cuidar de si é cuidar de todos!</p>
+
+<blockquote>
+  <p>“Se você percebe que precisa de ajuda, mas tem medo de um ‘diagnóstico’, saiba que ele foi elaborado para lhe ajudar, e não para o sentenciar!”</p>
+</blockquote>
+
+<p>Procure sempre profissionais que defendam tratamentos em saúde mental em liberdade, pautados no desenvolvimento da ciência e devidamente credenciados em seus conselhos de classe!</p></article>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footer-inner">
+    <span>© Susana Soares — Psicóloga</span>
+    <div class="footer-links">
+      <a href="https://api.whatsapp.com/send?phone=5511950502724" target="_blank" rel="noreferrer noopener">WhatsApp: (11) 95050-2724</a>
+      <a href="mailto:psi.susanasoares@gmail.com">psi.susanasoares@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var LIGHT_HREF = 'css/StylePsicoterapia.css';
+    var DARK_HREF  = 'css/DarkStylePsicoterapia.css';
+
+    var link   = document.getElementById('theme-stylesheet');
+    var button = document.getElementById('theme-toggle');
+    var label  = button.querySelector('.label');
+    var icon   = button.querySelector('.icon');
+
+    function setTheme(isDark) {
+      link.setAttribute('href', isDark ? DARK_HREF : LIGHT_HREF);
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      button.setAttribute('aria-pressed', String(isDark));
+      button.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
+      label.textContent = isDark ? 'Modo claro' : 'Modo escuro';
+      icon.textContent = isDark ? '☀️' : '🌙';
+    }
+
+    button.addEventListener('click', function () {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      setTheme(!isDark);
+    });
+
+    setTheme(false);
+  })();
+</script>
+
+</body>
+</html>
